@@ -1,11 +1,17 @@
-package com.majortomdev.MooTube;
+package com.majortomdev.MooTube.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*by JoeK 15/07/20*/
+@Entity
+@Table(name="videos")
 public class Video {
-	
+	@Id
 	private long id;
 	private String title;
 	private long duration;

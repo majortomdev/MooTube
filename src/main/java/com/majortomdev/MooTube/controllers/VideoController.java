@@ -1,9 +1,10 @@
-package com.majortomdev.MooTube;
+package com.majortomdev.MooTube.controllers;
 
 /*by JoeK 15/07/20*/
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,10 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.majortomdev.MooTube.models.Video;
+import com.majortomdev.MooTube.repositories.VideoRepository;
+
 @RestController
 public class VideoController {
+	@Autowired
+	VideoRepository videoRepository;
 	
 	private List<Video> videos = new ArrayList<Video>();
+	
 	
 	@GetMapping("/video")
 	public List<Video>  getVideoList() {
@@ -42,7 +49,8 @@ public class VideoController {
 		vid.setDataUrl("http://localhost:8081/video/"+vid.getId()+"/data");
 		
 		videos.add(vid); 
-		return vid;
+		System.out.println("in the POSTPOSTPOST method");
+		return videoRepository.save(vid);
 	}
 	
 	
