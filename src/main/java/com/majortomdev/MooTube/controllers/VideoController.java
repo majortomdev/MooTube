@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.majortomdev.MooTube.models.VStatus;
 import com.majortomdev.MooTube.models.Video;
 import com.majortomdev.MooTube.repositories.VideoRepository;
 
 @RestController
 public class VideoController {
+	
 	@Autowired
 	VideoRepository videoRepository;
 	
@@ -28,7 +31,7 @@ public class VideoController {
 	public List<Video>  getVideoList() {
 		
 
-		
+		System.out.println("im in the GET GET GET GET so i am");
 		return videos;
 	}
 	
@@ -47,10 +50,19 @@ public class VideoController {
 		}
 		
 		vid.setDataUrl("http://localhost:8081/video/"+vid.getId()+"/data");
-		
+		//call the /video/{id}/data endpoint
 		videos.add(vid); 
 		System.out.println("in the POSTPOSTPOST method");
 		return videoRepository.save(vid);
+	}
+	
+	@PostMapping("/video/{id}/data")//maybe get id out of video object.......
+	public VStatus loadVideo(@RequestBody Video vid, MultipartFile file){
+		
+		
+		
+		return null;
+		
 	}
 	
 	
