@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.majortomdev.MooTube.models.Video;
 import com.majortomdev.MooTube.repositories.VideoRepository;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class VideoController {
 	
 	@Autowired
@@ -42,6 +44,7 @@ public class VideoController {
 
 	@PostMapping("/video")
 	public Video saveVideo(@RequestBody Video vid) {
+		System.out.println("iv at least MADE IT HERE to the spboot controller....");
 		if(videos.size()==0) {
 			vid.setId(1l);
 		}else {

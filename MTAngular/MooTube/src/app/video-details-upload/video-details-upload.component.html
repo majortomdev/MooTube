@@ -1,8 +1,13 @@
-<form action="xxxxxx">
-  <label for="title">Title: </label><input type="text" name="title"><br>
-  <label for="location">Location: </label><input type="text" name="location"><br>
-  <label for="duration">Duration: </label><input type="number" name="duration"><br>
-  <label for="subject">Subject: </label><input type="text" name="subject"><br>
-  <label for="contenttype">Content Type: </label><input type="text" name="contenttype"><br>
-  <input type="submit">
+<form (ngSubmit)="saveVideo()">
+  <label for="title">Title: </label>
+        <input type="text" name="title" [(ngModel)]='video.title'><br>
+  <label for="location">Location: </label>
+        <input type="text" name="location" [(ngModel)]='video.location'><br>
+  <label for="duration">Duration: </label>
+        <input type="number" name="duration" [(ngModel)]='video.duration'><br>
+  <label for="subject">Subject: </label>
+        <input type="text" name="subject" [(ngModel)]='video.subject'><br>
+  <label for="contenttype">Content Type: </label>
+        <input type="text" name="contenttype" [(ngModel)]='video.contenttype'><br>
+        <input type="submit">
 </form>
