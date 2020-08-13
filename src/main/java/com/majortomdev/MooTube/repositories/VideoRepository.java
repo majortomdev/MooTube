@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.majortomdev.MooTube.models.Video;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @Repository
 public interface VideoRepository extends JpaRepository<Video, Long>{
 

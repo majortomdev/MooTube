@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Video } from './video';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,13 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  public postVideo(video: Video) {
-    console.log(video.title + ' is the one added, ' + ' its url is: ' + this.urlVid);
-    return this.http.post(this.urlVid, video, {responseType: 'text' as 'json'});
+
+  postVideo(video: Video): Observable<any> {
+    return this.http.post<any>(this.urlVid, video);
+}
+
+
+  getVids(): Observable<any> {
+    return this.http.get(this.urlVid);
   }
 }
