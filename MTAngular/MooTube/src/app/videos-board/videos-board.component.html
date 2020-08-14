@@ -1,0 +1,21 @@
+<div style="text-align:left;width:500px;">
+  <h1>
+      {{ title }}
+  </h1>
+
+  <table *ngIf="videosArray">
+      <!-- ADD HEADERS -->
+      <tr>
+          <th>ID</th>
+              <th>Name of Video</th>
+                  <th>Type of Video</th>
+      </tr>
+
+      <!-- BIND ARRAY TO TABLE -->
+      <tr *ngFor="let vid of videosArray">
+          <td>{{vid.title}}</td>
+              <td>{{vid.location}}</td>
+                  <td>{{vid.subject}}</td>
+      </tr>
+  </table>
+</div>

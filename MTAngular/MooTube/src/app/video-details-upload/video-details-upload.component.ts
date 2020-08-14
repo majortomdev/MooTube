@@ -25,12 +25,6 @@ export class VideoDetailsUploadComponent implements OnInit {
     );
   }
 
-  getVideos() {
-    return this.httpService.getVids().subscribe(
-      res => {
-        console.log(res);
-      }
-    );
-  }
+
 
 }
