@@ -22,4 +22,10 @@ export class HttpService {
   getVids(): Observable<any> {
     return this.http.get(this.urlVid);
   }
+
+  uploadVideo(data: File): Observable<any> {
+      const formData: FormData = new FormData();
+      formData.append('data', data);
+      return this.http.post<any>(this.urlVid + '23' + '/data', formData);
+  }
 }

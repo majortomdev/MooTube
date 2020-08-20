@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { VideoDetailsUploadComponent } from './video-details-upload/video-details-upload.component';
 import { VideosBoardComponent } from './videos-board/videos-board.component';
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoDetailsUploadComponent,
-    VideosBoardComponent
+    VideosBoardComponent,
+    VideoUploadComponent
   ],
   imports: [
     BrowserModule,

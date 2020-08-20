@@ -6,9 +6,10 @@
   <table *ngIf="videosArray">
       <!-- ADD HEADERS -->
       <tr>
-          <th>ID</th>
-              <th>Name of Video</th>
+          <th>Title</th>
+              <th>Location</th>
                   <th>Type of Video</th>
+                      <th>Video link</th>
       </tr>
 
       <!-- BIND ARRAY TO TABLE -->
@@ -16,6 +17,9 @@
           <td>{{vid.title}}</td>
               <td>{{vid.location}}</td>
                   <td>{{vid.subject}}</td>
+                      <td>{{vid.duration}}</td>
       </tr>
   </table>
 </div>
+
+<button routerLink="/post">Upload Video Here</button>

@@ -55,7 +55,8 @@ public class VideoController {
 		vid.setDataUrl("http://localhost:8081/video/"+vid.getId()+"/data");
 		//call the /video/{id}/data endpoint
 		videos.add(vid); 
-		System.out.println("in the POSTPOSTPOST method");
+		
+		System.out.println("in the POST method new url is "+vid.getDataUrl());
 		return videoRepository.save(vid);
 	}
 	
